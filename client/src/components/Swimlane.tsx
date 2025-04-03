@@ -5,32 +5,25 @@ import { ApiMessage } from '../interfaces/ApiMessage';
 interface SwimlaneProps {
   title: string;
   tickets: TicketData[];
-  deleteTicket: (ticketId: number) => Promise<ApiMessage>
+  deleteTicket: (ticketId: number) => Promise<ApiMessage>;
 }
 
 const Swimlane = ({ title, tickets, deleteTicket }: SwimlaneProps) => {
-  const getStatusClass = (status: string) => {
-    switch (status) {
-      case 'Todo':
-        return 'swim-lane todo';
-      case 'In Progress':
-        return 'swim-lane inprogress';
-      case 'Done':
-        return 'swim-lane done';
-      default:
-        return 'swim-lane';
-    }
+  const statusClasses: { [key: string]: string } = {
+    Todo: 'swim-lane todo',
+    'In Progress': 'swim-lane inprogress',
+    Done: 'swim-lane done',
   };
 
   return (
-    <div className={`swimlane ${getStatusClass(title)}`}>
+    <div className={statusClasses[title] || 'swim-lane'}>
       <h2>{title}</h2>
-      {tickets.map(ticket => (
-        <TicketCard 
-          key={ticket.id}
-          ticket={ticket}
-          deleteTicket={deleteTicket}
-        />
+      {tickets.map((ticket) => (
+        <TicketCard
+        key={ticket.id !== null && ticket.id !== undefined ? ticket.id : Math.random()}
+        ticket={ticket}
+        deleteTicket={deleteTicket}
+      />
       ))}
     </div>
   );
