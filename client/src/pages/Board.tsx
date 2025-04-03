@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 import { retrieveTickets, deleteTicket } from '../api/ticketAPI';
