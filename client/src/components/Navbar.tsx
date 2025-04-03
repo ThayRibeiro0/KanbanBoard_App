@@ -22,21 +22,26 @@ const Navbar = () => {
         <Link to='/'>Krazy Kanban Board</Link>
       </div>
       <ul>
-      {
-        !loginCheck ? (
-          <li className='nav-item'>
-            <button type='button'>
-              <Link to='/login'>Login</Link>
-            </button>
-          </li>
-        ) : (
-          <li className='nav-item'>
-            <button type='button' onClick={() => {
-              auth.logout();
-            }}>Logout</button>
-          </li>
-        )
-      }
+        <li className='nav-item'>
+          <button type='button'>
+            <Link to='/create'>New Ticket</Link> 
+          </button>
+        </li>
+        {
+          !loginCheck ? (
+            <li className='nav-item'>
+              <button type='button'>
+                <Link to='/login'>Login</Link>
+              </button>
+            </li>
+          ) : (
+            <li className='nav-item'>
+              <button type='button' onClick={() => {
+                auth.logout();
+              }}>Logout</button>
+            </li>
+          )
+        }
       </ul>
     </div>
   )

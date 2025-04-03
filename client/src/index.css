@@ -24,7 +24,7 @@ input:-moz-placeholder {
 
 a {
   font-weight: 500;
-  color: #000000;
+  color: black;
   text-decoration: inherit;
 }
 a:hover {
@@ -32,12 +32,11 @@ a:hover {
 }
 
 body {
-  background: #ECF0F1;
+  background: rgb(64, 50, 42);
   background-size: cover;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   margin: 0;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -54,7 +53,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -88,6 +87,7 @@ tbody tr:nth-child(odd) {
 .nav {
   display: flex;
   padding: 1em 2em;
+  gap: 1em;
 }
 
 .nav ul {
@@ -105,7 +105,8 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-title a {
-  color: #b864c4;
+  color: rgb(0, 145, 255);
+  font-weight: bold;
 }
 
 .nav-item {
@@ -118,6 +119,7 @@ tbody tr:nth-child(odd) {
   color: #fff;
   text-decoration: none;
 }
+
 
 .active {
   font-weight: 700;
@@ -182,21 +184,25 @@ tbody tr:nth-child(odd) {
 
 .form {
   width: 60%;
-  height: 80%;
-  background-color: #b864c4;
+  height: 50%;
+  background-color: beige;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding: 20px;
+  align-items: flex-start;
+  
 }
 
 .form > h1, .form > label {
-  color: yellow;
+  color: black;
 }
 
 .form > input {
   width: 200px;
+  background-color: white;
+  color: black;
   
 }
 
@@ -207,6 +213,8 @@ tbody tr:nth-child(odd) {
 
 .form button {
   margin-top: 2.5%;
+  background-color:white;
+  color: black;
 }
 
 .form textarea {
@@ -242,6 +250,49 @@ tbody tr:nth-child(odd) {
   justify-content: center;
 }
 
+.form-group input[type="text"]::placeholder,
+.form-group input[type="password"]::placeholder {
+  background-color: #f0f0f0; /* Cor de fundo acinzentada */
+  color: #808080; /* Cor do texto do placeholder */
+  padding: 8px; /* Adicione padding para melhor aparência */
+  border-radius: 4px; /* O mesmo border-radius dos inputs */
+}
+
+/* Para navegadores WebKit (Chrome, Safari) */
+.form-group input[type="text"]::-webkit-input-placeholder,
+.form-group input[type="password"]::-webkit-input-placeholder {
+  background-color: #f0f0f0;
+  color: #808080;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Para Firefox */
+.form-group input[type="text"]::-moz-placeholder,
+.form-group input[type="password"]::-moz-placeholder {
+  background-color: #f0f0f0;
+  color: #808080;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Para Microsoft Edge */
+.form-group input[type="text"]:-ms-input-placeholder,
+.form-group input[type="password"]:-ms-input-placeholder {
+  background-color: #f0f0f0;
+  color: #808080;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Para navegadores modernos */
+.form-group input[type="text"]::placeholder,
+.form-group input[type="password"]::placeholder {
+  background-color: #f0f0f0;
+  color: #808080;
+  padding: 8px;
+  border-radius: 4px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

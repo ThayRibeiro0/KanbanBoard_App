@@ -90,7 +90,9 @@ const CreateTicket = () => {
             onChange={handleTextAreaChange}
           />
           <label htmlFor='tUserId'>User's ID</label>
+          <label htmlFor='tUserId'>Assign User</label>
           <select
+            id='tUserId'
             name='assignedUserId'
             value={newTicket?.assignedUserId || ''}
             onChange={handleUserChange}
