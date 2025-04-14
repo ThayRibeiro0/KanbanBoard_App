@@ -8,6 +8,8 @@ const retrieveUsers = async () => {
         Authorization: `Bearer ${Auth.getToken()}`
       }
     });
+
+    // Check if the response is ok
     const data = await response.json();
 
     if(!response.ok) {
