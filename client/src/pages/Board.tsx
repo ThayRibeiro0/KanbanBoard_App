@@ -22,10 +22,10 @@ const Board = () => {
       setLoginCheck(true);
     } if (!auth.loggedIn()) {
       setLoginCheck(true);
-      navigate('/board'); 
+      navigate('/login'); 
     }
     else {  
-      navigate('/login');
+      navigate('/board');
 
     }
   };
