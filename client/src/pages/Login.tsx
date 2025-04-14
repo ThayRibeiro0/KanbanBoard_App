@@ -26,6 +26,7 @@ const Login = () => {
       const data = await login(loginData);
       Auth.login(data.token);
       navigate('/'); // Redireciona para a página principal após o login
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.error('Failed to login', err);
       setError(err.message || 'Login falhou. Verifique suas credenciais.'); // Exibe mensagem de erro
@@ -43,7 +44,7 @@ const Login = () => {
           name='username'
           value={loginData.username || ''}
           onChange={handleChange}
-          placeholder='Username' // Melhor para a experiência do usuário
+          placeholder='...|' // Melhor para a experiência do usuário
           required
         />
         <label>Password</label>
@@ -52,10 +53,10 @@ const Login = () => {
           name='password'
           value={loginData.password || ''}
           onChange={handleChange}
-          placeholder='Password' // Melhor para a experiência do usuário
+          placeholder='...|' // Melhor para a experiência do usuário
           required
         />
-        <button type='submit'>Login</button>
+        <button className='login-button' type='submit'>Login</button>
       </form>
     </div>
   );

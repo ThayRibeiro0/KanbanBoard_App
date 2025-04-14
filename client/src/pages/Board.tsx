@@ -1,5 +1,5 @@
 import { useEffect, useState, useLayoutEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 import { retrieveTickets, deleteTicket } from '../api/ticketAPI';
 import ErrorPage from './ErrorPage';
@@ -20,8 +20,13 @@ const Board = () => {
   const checkLogin = () => {
     if (auth.loggedIn() !== null && auth.loggedIn()) {
       setLoginCheck(true);
-    } else {
-      navigate('/login'); // Redirect to login if not authenticated
+    } if (!auth.loggedIn()) {
+      setLoginCheck(true);
+      navigate('/board'); 
+    }
+    else {  
+      navigate('/login');
+
     }
   };
 
@@ -61,10 +66,6 @@ const Board = () => {
 
   return (
     <>
-      <button type='button' id='create-ticket-link'>
-        <Link to='/create' >New Ticket</Link>
-      </button>
-
       {
         !loginCheck ? (
           <div className='login-notice'>

@@ -18,6 +18,4 @@ const login = async (userInfo: UserLogin) => {
   return response.json();
 };
 
-
-
 export { login };
