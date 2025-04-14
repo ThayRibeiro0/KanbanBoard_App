@@ -117,7 +117,7 @@ To deploy the app:
 ## 🌐 Deployed Application
 
 Check the live application here:  
-🔗 [Kanban Board Live](https://kanbanboard-app.onrender.com/board)
+[🔗 [Kanban Board Live](https://kanbanboard-app.onrender.com/board)](https://kanbanboard-app.onrender.com)
 
 ---
 
